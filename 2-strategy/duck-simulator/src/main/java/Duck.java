@@ -1,6 +1,7 @@
 public abstract class Duck {
 
-	FlyBehavior flyBehavior;
+	public static final boolean PatoHelice = false;
+    FlyBehavior flyBehavior;
 	QuackBehavior quackBehavior;
 
 	public void setFlyBehavior(FlyBehavior fb) {

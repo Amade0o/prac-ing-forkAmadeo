@@ -1,3 +1,4 @@
+package weather.station.pv;
 public class WindChillDisplay implements Observer, DisplayElement{
     WeatherData weatherData;
     float heatIndex;

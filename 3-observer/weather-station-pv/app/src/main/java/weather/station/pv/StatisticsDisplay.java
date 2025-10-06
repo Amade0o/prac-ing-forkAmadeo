@@ -1,3 +1,4 @@
+package weather.station.pv;
 public class StatisticsDisplay implements Observer, DisplayElement {
 	private float maxTemp = 0.0f;
 	private float minTemp = 200;

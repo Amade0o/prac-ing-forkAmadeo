@@ -1,3 +1,4 @@
+package weather.station.pv;
 import java.util.ArrayList;
 import java.util.List;
 

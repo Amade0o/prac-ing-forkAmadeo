@@ -1,3 +1,4 @@
+package weather.station.pv;
 public class FahrenheitDisplay implements Observer, DisplayElement{
     float fahrenTemp;
     WeatherData weatherData;

@@ -1,3 +1,4 @@
+package weather.station.pv;
 public class ForecastDisplay implements Observer, DisplayElement {
 	private float currentPressure = 29.92f;  
 	private float lastPressure;

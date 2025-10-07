@@ -15,16 +15,21 @@ public class FabricaObserversConcreta implements FabricaObservers{
         
         Observer o = null;
 
-        if(type.equals("BASICOBSERVER")){
-            o = new BasicObserver(tablero);
-        }else if(type.equals("REPORTOBSERVER")){
-            o = new ReportObserver(tablero);
-        }else if(type.equals("STATSLOGOBSERVER")){
-            o = new StatsLogObserver(tablero);
-        }else if (type.equals("NEGATIVEOBSERVER")) {
-            o = new NegativeObserver(tablero);
-        }else{
-            throw new IllegalArgumentException("Ese step no existe");
+        switch (type) {
+            case "BASICOBSERVER":
+                o = new BasicObserver(tablero);
+                break;
+            case "REPORTOBSERVER":
+                o = new ReportObserver(tablero);
+                break;
+            case "STATSLOGOBSERVER":
+                o = new StatsLogObserver(tablero);
+                break;
+            case "NEGATIVEOBSERVER":
+                o = new NegativeObserver(tablero);
+                break;
+            default:
+                throw new IllegalArgumentException("Ese step no existe");
         }
 
         return o;

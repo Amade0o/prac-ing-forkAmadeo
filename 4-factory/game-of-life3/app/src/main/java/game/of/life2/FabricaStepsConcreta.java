@@ -20,16 +20,21 @@ public class FabricaStepsConcreta implements FabricaSteps{
         
         Step step;
 
-        if(type.equals("B3S23")){
-            step = new B3S23();
-        }else if(type.equals("B36S23")){
-            step = new B36S23();
-        }else if(type.equals("INMB3S23")){
-            step = new InmigrationB3S23();
-        }else if(type.equals("QUADB3S23")){
-            step = new QuadB3S23();
-        }else{
-            throw new IllegalArgumentException("Ese step no existe");
+        switch (type) {
+            case "B3S23":
+                step = new B3S23();
+                break;
+            case "B36S23":
+                step = new B36S23();
+                break;
+            case "INMB3S23":
+                step = new InmigrationB3S23();
+                break;
+            case "QUADB3S23":
+                step = new QuadB3S23();
+                break;
+            default:
+                throw new IllegalArgumentException("Ese step no existe");
         }
 
         return step;

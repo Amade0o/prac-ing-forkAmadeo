@@ -24,5 +24,14 @@ public class TestSimpleFactory {
         System.out.println(pizza);
     }
 
+    @Test
+    public void testOrderPizzaArgentina() {
+        SimplePizzaFactory factory = new SimplePizzaFactory();
+        PizzaStore store = new PizzaStore(factory);
+
+        Pizza pizza = store.orderPizza("argentina");
+        System.out.println("We ordered a " + pizza.getName() + "\n");
+        System.out.println(pizza);
+    }
 }
 

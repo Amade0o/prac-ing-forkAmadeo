@@ -38,4 +38,20 @@ public class TestFactoryMethod {
         System.out.println("Joel ordered a " + pizza.getName() + "\n");
     }
 
+    @Test
+    public void testOrderArgentinianPizza() {
+        PizzaStore argStore = new ArgentinianPizzaStore();
+
+        Pizza pizza = argStore.orderPizza("cheese");
+        System.out.println("Joel ordered a " + pizza.getName() + "\n");
+
+        pizza = argStore.orderPizza("clam");
+        System.out.println("Joel ordered a " + pizza.getName() + "\n");
+
+        pizza = argStore.orderPizza("pepperoni");
+        System.out.println("Joel ordered a " + pizza.getName() + "\n");
+
+        pizza = argStore.orderPizza("veggie");
+        System.out.println("Joel ordered a " + pizza.getName() + "\n");
+    }
 }

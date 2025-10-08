@@ -3,7 +3,44 @@ package game.of.life2;
 public class Juego {
 
     public static void main(String[] args) {
-        // Usaremos este patrón booleano como base para todas las simulaciones.
+        //Creo una nueva view
+        View view = new View();
+        while (view.showView()) {
+        // el ciclo se repite hasta que el usuario diga "n"
+        }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private void Borrado(){
+            // Usaremos este patrón booleano como base para todas las simulaciones.
         boolean[][] patronInicial = {
             {true, true, false, false, false},
             {false, false, true,  true,  false},
@@ -65,8 +102,5 @@ public class Juego {
 
         tableroBasico3.doStep();
         observadorTablero3.reportarPromedio();// stats log observer reportes finales
-        
-
-
-    }   
+    }
 }

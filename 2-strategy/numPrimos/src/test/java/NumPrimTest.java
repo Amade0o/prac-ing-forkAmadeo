@@ -8,6 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import org.mockito.Mockito;
+import static org.mockito.Mockito.*;
+
+
 //VOY A TENER QUE USAR MOCK
 public class NumPrimTest {
     //Testeamos numprim 
@@ -153,10 +157,25 @@ public class NumPrimTest {
         assertEquals(expected, actual);
     }
 
-    //ASI DEBERIA SER, TENGO QUE USAR EL CONTEXTO!
-    //aca iria el test, paja
+    //MOCK
+    @Test
+    public void testGenerarLista_UsaEstrategiaMock() {
+        //interfazComportamiento es lo que implementa numPrim y numprim2
+        interfazComportamiento mockEstrategia = Mockito.mock(interfazComportamiento.class);
+        
+        //Config mock
+        ArrayList<Integer> mockResultado = new ArrayList<>(Arrays.asList(2,3,5));
+        when(mockEstrategia.generarListaPrimos(3)).thenReturn(mockResultado);
 
-    //NO SE COMO USAR MOCCJ
-    //Aca deberia ir mock, que paja
+        //Inyectar mock en contexto
+        Contexto contexto = new Contexto(mockEstrategia);
+        ArrayList<Integer> resultado = contexto.generarLista(3);
+
+        //Verificamos que el resultado sea el esperado
+        assertEquals(mockResultado, resultado);
+
+        //Verificamos que el mock fue llamado correctamente
+        verify(mockEstrategia).generarListaPrimos(3);
+    }
 }
 

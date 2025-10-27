@@ -96,12 +96,18 @@ public class BeatModel implements BeatModelInterface, Runnable {
 	}
 
 	public void playBeat() {
-		clip.setFramePosition(0);
-		clip.start();
+		// Solo intenta usar el clip si se inicializó correctamente
+    	if (clip != null) {
+    	    clip.setFramePosition(0);
+    	    clip.start();
+    	}
 	}
 	public void stopBeat() {
-		clip.setFramePosition(0);
-		clip.stop();
+		// Solo intenta usar el clip si se inicializó correctamente
+    	if (clip != null) {
+    	    clip.setFramePosition(0);
+    	    clip.stop();
+    	}
 	}
 
 }
